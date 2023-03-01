@@ -11,7 +11,7 @@ new Vue({
     },
     methods: {
         addGuest() {
-            this.countGuests++;
+            this.guests.push('');
         },
         deleteGuest(index) {
             if (index >= 0 && index <= this.guests.length) {
