@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF8">
+    <title>Learning Vue.js</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<div id = "form">
+    <p>Email</p>
+    <input type = "text" v-model="email">
+    <p>First Name</p>
+    <input type = "text" v-model="firstName">
+    <p>Last Name</p>
+    <input type = "text" v-model="lastName">
+    <p>Phone</p>
+    <input type = "text" v-model="phone">
+
+    <p>Guests
+    <button @click="countGuests++">+</button></p>
+    <div v-for = "i in countGuests">
+        <div v-on:dblclick="">Guest {{i}}</div>
+        <p><input type="text"></p>
+    </div>
+    <button>Send data</button>
+</div>
+
+<!--VUE.JS-->
+
+<script src="../../vue.js"></script>
+<script src="script.js"></script>
+
+</body>
+
+</html>
