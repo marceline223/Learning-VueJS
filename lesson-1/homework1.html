@@ -35,16 +35,17 @@
                 <input type="button" class="btn btn-primary" value="+" @click="addGuest()">
             </div>
             <div v-for="i in countGuests" class="form-group">
-                <label v-on:dblclick="deleteGuest(i)">Guest {{i}}</label>
-                <input type="text" class="form-control" v-model="guests[i]">
+                <label v-on:dblclick="deleteGuest(i-1)">Guest {{i}}</label>
+                <input type="text" class="form-control" v-model="guests[i-1]">
             </div>
             <hr>
             <div class="form-group"><input type = "button" class="btn btn-success" value="Send data"></div>
     </div>
-
+    <br>
+    <br>
     <div class = "result">
-        All done!
-        <table class="table-bordered">
+        <h2>All done!</h2>
+        <table class="table table-bordered">
             <tr>
                 <td>Email</td>
                 <td>{{email}}</td>
@@ -60,7 +61,7 @@
             <tr>
                 <td>Guests</td>
                 <td>
-                    <table class="table-bordered">
+                    <table class="table table-bordered">
                         <tr v-for="guest in guests">
                             <td>{{guest}}</td>
                         </tr>
