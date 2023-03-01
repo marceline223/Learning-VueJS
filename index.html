@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF8">
+    <title>Learning Vue.js</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="content">
+
+        <h1>Упражнения</h1>
+
+        <div id="app">
+            <ul>
+                <li v-for="student in students">
+                    <p><b>{{student.name}}</b></p>
+                    <p>Возраст: {{getAge(student)}}</p>
+                </li>
+                
+            </ul>
+        
+
+            <h2>Цвета</h2>
+            <div class="square" v-bind:style="colorStyle"></div>
+            <div class="buttons">
+                <button @click="squareColor = 'red'">Красный</button>
+                <button @click="squareColor = 'blue'">Синий</button>
+                <button @click="squareColor = 'yellow'">Желтый</button>
+                <button @click="squareColor = 'pink'">Розовый</button>
+                <button @click="squareColor = 'green'">Зеленый</button>
+                <button @click="squareColor = 'purple'">Фиолетовый</button>
+            </div>
+            <br>
+            <div class="square" v-bind:style="colorInputStyle"></div>
+            <div class="input">
+                <input type="text" v-model='inputColor'>
+            </div>
+        </div>
+    </div>
+
+
+    <!--VUE.JS-->
+
+    <script src="../vue.js"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>

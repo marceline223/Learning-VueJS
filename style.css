@@ -1,0 +1,46 @@
+body {
+    text-align: center;
+    background-color: rgb(255, 253, 251);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14pt;
+}
+
+button {
+    width: auto;
+    font-size: 14pt;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 10px;
+}
+
+.content {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 55px;
+    padding-right: 55px;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+    margin: auto;
+}
+
+.buttons {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.input {
+    text-align: center;
+    margin: 10px;
+}
+
+input {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14pt;
+}
