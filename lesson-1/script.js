@@ -1,5 +1,5 @@
 new Vue({
-    el: '#form',
+    el: '.form',
     data: {
         email: '',
         firstName: '',
