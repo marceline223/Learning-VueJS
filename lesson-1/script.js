@@ -6,7 +6,8 @@ new Vue({
         lastName: '',
         phone: '',
         guests: [],
-        countGuests: 0
+        countGuests: 0,
+        showResult: false
     },
     methods: {
         addGuest() {
