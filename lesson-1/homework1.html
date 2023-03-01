@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF8">
     <title>Learning Vue.js</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../src/bootstrap/css/bootstrap.min.css">
 </head>
 
 <body>
 
-<div id = "form">
+<div id = "form" class="wrapper">
     <p>Email</p>
     <input type = "text" v-model="email">
     <p>First Name</p>
@@ -20,17 +20,17 @@
     <input type = "text" v-model="phone">
 
     <p>Guests
-    <button @click="countGuests++">+</button></p>
+    <button @click="countGuests++" class="btn-primary">+</button></p>
     <div v-for = "i in countGuests">
         <div v-on:dblclick="">Guest {{i}}</div>
         <p><input type="text"></p>
     </div>
-    <button>Send data</button>
+    <button class="btn-success">Send data</button>
 </div>
 
 <!--VUE.JS-->
 
-<script src="../../vue.js"></script>
+<script src="../../src/vue.js"></script>
 <script src="script.js"></script>
 
 </body>
