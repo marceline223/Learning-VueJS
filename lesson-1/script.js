@@ -1,17 +1,22 @@
 new Vue({
-    el: '.form',
+    el: '.content',
     data: {
         email: '',
         firstName: '',
         lastName: '',
         phone: '',
-        countGuests: 0,
-        guests: []
+        guests: [],
+        countGuests: 0
     },
     methods: {
-        addGuest(guest){
-            if (guest) {
-                this.guests.push(guest)
+        addGuest() {
+            this.countGuests++;
+            this.guests.push('');
+        },
+        deleteGuest(index) {
+            if (index >= 0 && index <= this.guests.length) {
+                this.guests.splice(index, 1); // удаление элемента
+                this.countGuests--;
             }
         }
     }
