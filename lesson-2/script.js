@@ -5,27 +5,32 @@ new Vue({
             {
                 name: 'Name',
                 value: '',
-                pattern: /^[a-zA-Z ]{2,30}$/
+                pattern: /^[a-zA-Z ]{2,30}$/,
+                isChanged: false
             },
             {
                 name: 'Phone',
                 value: '',
-                pattern: /^[0-9]{7,14}$/
+                pattern: /^[0-9]{7,14}$/,
+                isChanged: false
             },
             {
                 name: 'Email',
                 value: '',
-                pattern: /.+/
+                pattern: /.+/,
+                isChanged: false
             },
             {
                 name: 'Some Field 1',
                 value: '',
-                pattern: /.+/
+                pattern: /.+/,
+                isChanged: false
             },
             {
                 name: 'Some Field 2',
                 value: '',
-                pattern: /.+/
+                pattern: /.+/,
+                isChanged: false
             }
         ],
         showResult: false

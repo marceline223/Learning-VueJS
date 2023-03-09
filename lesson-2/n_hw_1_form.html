@@ -20,9 +20,9 @@
                     <label>
                         {{field.name}}
                         <i class="fa fa-check-circle" fa="lg" aria-hidden="true" v-if="checkIsFieldCorrect(field)"></i>
-                        <i class="fa fa-exclamation-circle" fa="lg" aria-hidden="true" v-else-if="field.value"></i>
+                        <i class="fa fa-exclamation-circle" fa="lg" aria-hidden="true" v-else-if="field.isChanged"></i>
                     </label>
-                    <input type="text" v-model="field.value" class="form-control">
+                    <input type="text" v-model="field.value" class="form-control" @input="field.isChanged = true">
                 </div>
             </div>
             <button class="btn btn-primary" @click="showResult = true" :disabled="countOfCorrectFields != 5">
