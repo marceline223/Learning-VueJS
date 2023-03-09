@@ -13,7 +13,7 @@
     <div class="sample">
         <form v-if="!showResult">
             <div class="progress">
-                <div class="progress-bar"></div>
+                <div class="progress-bar" v-bind:style="progressBarStyle"></div>
             </div>
             <div>
                 <div class="form-group" v-for="field in info">

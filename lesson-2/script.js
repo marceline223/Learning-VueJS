@@ -1,4 +1,3 @@
-
 new Vue({
     el: '.sample',
     data: {
@@ -35,6 +34,23 @@ new Vue({
         checkIsFieldCorrect(field) {
             let pat = field.pattern;
             return pat.test(field.value);
+        }
+    },
+    computed: {
+        countOfCorrectFields() {
+            let count = 0;
+            for (let field of this.info) {
+                if (this.checkIsFieldCorrect(field)) {
+                    count++;
+                }
+            }
+            return count;
+        },
+        progressBarStyle() {
+            let width = this.countOfCorrectFields / 5 * 100;
+            return {
+                'width': width + '%'
+            }
         }
     }
 });
