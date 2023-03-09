@@ -25,7 +25,7 @@
                     <input type="text" v-model="field.value" class="form-control">
                 </div>
             </div>
-            <button class="btn btn-primary" @click="showResult = true">
+            <button class="btn btn-primary" @click="showResult = true" :disabled="countOfCorrectFields != 5">
                 Send Data
             </button>
         </form>
