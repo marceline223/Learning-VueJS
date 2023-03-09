@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1</title>
+    <title>HomeWork 2-2</title>
     <link rel="stylesheet" href="../../src/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../src/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
@@ -18,8 +18,8 @@
 <body>
 <div class="wrapper">
     <div class="sample">
-        <form>
-            <div class="content alert alert-info">
+        <form v-if="!showResult">
+            <div class="content alert alert-info" @scroll="handleScroll">
                 <p>This text no one reads. This text no one reads. This text no one reads.</p>
                 <p>This text no one reads. This text no one reads. This text no one reads.</p>
                 <p>This text no one reads. This text no one reads. This text no one reads.</p>
@@ -31,28 +31,54 @@
                 <p>This text no one reads. This text no one reads. This text no one reads.</p>
                 <p>This text no one reads. This text no one reads. This text no one reads.</p>
             </div>
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox">
-                    1
-                </label>
+            <div v-if="isRead">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" v-model="isAgreed">
+                        I agree this text
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" v-model="isSpam">
+                        Send me spam
+                    </label>
+                </div>
+                <div v-if="isSpam">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" value = "email" v-model="sendSpamOn">
+                            Send me spam on email
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" value = "phone" v-model="sendSpamOn">
+                            Send me spam on phone
+                        </label>
+                    </div>
+                </div>
+                <hr>
+                <button class="btn btn-primary" @click="showResult = !showResult" v-if="isAgreed">
+                    Send Data
+                </button>
             </div>
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio">
-                    2
-                </label>
-            </div>
-            <hr>
-            <button class="btn btn-primary">
-                Send Data
-            </button>
         </form>
-        <div>
+        <div v-if="showResult">
             <table class="table table-bordered">
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <td>Agree Text</td>
+                    <td v-if="isAgreed"> Yes </td>
+                    <td v-else> No </td>
+                </tr>
+                <tr>
+                    <td>Get spam</td>
+                    <td v-if="isSpam"> Yes </td>
+                    <td v-else> No </td>
+                </tr>
+                <tr v-if="isSpam">
+                    <td>Spam on</td>
+                    <td> {{sendSpamOn}} </td>
                 </tr>
             </table>
         </div>
