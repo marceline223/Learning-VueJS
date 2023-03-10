@@ -6,31 +6,31 @@ new Vue({
                 name: 'Name',
                 value: '',
                 pattern: /^[a-zA-Z ]{2,30}$/,
-                isChanged: false
+                isDirty: false
             },
             {
                 name: 'Phone',
                 value: '',
                 pattern: /^[0-9]{7,14}$/,
-                isChanged: false
+                isDirty: false
             },
             {
                 name: 'Email',
                 value: '',
                 pattern: /.+/,
-                isChanged: false
+                isDirty: false
             },
             {
                 name: 'Some Field 1',
                 value: '',
                 pattern: /.+/,
-                isChanged: false
+                isDirty: false
             },
             {
                 name: 'Some Field 2',
                 value: '',
                 pattern: /.+/,
-                isChanged: false
+                isDirty: false
             }
         ],
         showResult: false
