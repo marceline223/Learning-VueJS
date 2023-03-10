@@ -1,5 +1,5 @@
 # Learning-VueJS
-Exersizes from VueJS lessons
+Exercises from VueJS lessons
 
 
 ## lesson-1:
