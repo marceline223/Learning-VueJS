@@ -18,8 +18,8 @@
 <body>
 <div class="wrapper">
     <div class="sample">
-        <form v-if="!showResult">
-            <div class="content alert alert-info" @scroll="handleScroll">
+        <form @submit.prevent="showResult" v-if="!showResult">
+            <div class="content alert alert-info" @scroll="handleScroll" >
                 <p>This text no one reads. This text no one reads. This text no one reads.</p>
                 <p>This text no one reads. This text no one reads. This text no one reads.</p>
                 <p>This text no one reads. This text no one reads. This text no one reads.</p>

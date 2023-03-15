@@ -11,7 +11,7 @@
 <body>
 <div class="wrapper">
     <div class="sample">
-        <form v-if="!showResult">
+        <form @submit.prevent="showResult" v-if="!showResult">
             <div class="progress">
                 <div class="progress-bar" v-bind:style="progressBarStyle"></div>
             </div>
