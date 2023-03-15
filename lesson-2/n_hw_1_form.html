@@ -16,13 +16,16 @@
                 <div class="progress-bar" v-bind:style="progressBarStyle"></div>
             </div>
             <div>
-                <div class="form-group" v-for="field in info">
+                <div class="form-group" v-for="(field, index) in info">
                     <label>
                         {{field.name}}
-                        <i class="fa fa-check-circle" fa="lg" aria-hidden="true" v-if="checkIsFieldCorrect(field)"></i>
-                        <i class="fa fa-exclamation-circle" fa="lg" aria-hidden="true" v-else-if="field.isDirty"></i>
+                        <i class="fa fa-check-circle" v-if="validation[index].isCorrect"></i>
+                        <i class="fa fa-exclamation-circle" v-else-if="field.isDirty"></i>
                     </label>
-                    <input type="text" v-model="field.value" class="form-control" @input="field.isDirty = true">
+                    <input type="text"
+                           class="form-control"
+                           :value="field.value"
+                           @input="onInput(index, $event.target.value)">
                 </div>
             </div>
             <button class="btn btn-primary" @click="showResult = true" :disabled="countOfCorrectFields != 5">

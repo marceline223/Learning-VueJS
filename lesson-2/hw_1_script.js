@@ -33,19 +33,31 @@ new Vue({
                 isDirty: false
             }
         ],
-        showResult: false
+        showResult: false,
+        validation: []
+    },
+    beforeMount() {
+        for (let field of this.info) {
+            this.validation.push({
+                isCorrect: false
+            });
+        }
     },
     methods: {
-        checkIsFieldCorrect(field) {
-            let pat = field.pattern;
-            return pat.test(field.value);
+        onInput(index, value) {
+            let field = this.info[index];
+            let fieldValidation = this.validation[index];
+
+            field.value = value;
+            fieldValidation.isCorrect = field.pattern.test(value);
+            field.isDirty = true;
         }
     },
     computed: {
         countOfCorrectFields() {
             let count = 0;
-            for (let field of this.info) {
-                if (this.checkIsFieldCorrect(field)) {
+            for (let fieldValidation of this.validation) {
+                if (fieldValidation.isCorrect) {
                     count++;
                 }
             }
