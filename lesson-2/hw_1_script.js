@@ -60,7 +60,7 @@ new Vue({
             return count;
         },
         progressBarStyle() {
-            let width = this.countOfCorrectFields / 5 * 100;
+            let width = this.countOfCorrectFields / this.info.length * 100;
             return {
                 'width': width + '%'
             }

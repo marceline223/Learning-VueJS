@@ -26,7 +26,7 @@
                            @input="onInput(index, $event.target.value)">
                 </div>
             </div>
-            <button class="btn btn-primary" @click="showResult = true" :disabled="countOfCorrectFields != 5">
+            <button class="btn btn-primary" @click="showResult = true" :disabled="countOfCorrectFields != info.length">
                 Send Data
             </button>
         </form>
