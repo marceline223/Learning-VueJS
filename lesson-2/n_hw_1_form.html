@@ -17,11 +17,9 @@
             </div>
             <div>
                 <div class="form-group" v-for="(field, index) in info">
-                    <label>
-                        {{field.name}}
-                        <i class="fa fa-check-circle" v-if="validation[index].isCorrect"></i>
-                        <i class="fa fa-exclamation-circle" v-else-if="field.isDirty"></i>
-                    </label>
+                    <label>{{field.name}}</label>
+                    <i v-if="control[index].isDirty"
+                       :class="control[index].isCorrect ? 'fa fa-check-circle' : 'fa fa-exclamation-circle'"></i>
                     <input type="text"
                            class="form-control"
                            :value="field.value"

@@ -5,58 +5,54 @@ new Vue({
             {
                 name: 'Name',
                 value: '',
-                pattern: /^[a-zA-Z ]{2,30}$/,
-                isDirty: false
+                pattern: /^[a-zA-Z ]{2,30}$/
             },
             {
                 name: 'Phone',
                 value: '',
-                pattern: /^[0-9]{7,14}$/,
-                isDirty: false
+                pattern: /^[0-9]{7,14}$/
             },
             {
                 name: 'Email',
                 value: '',
-                pattern: /.+/,
-                isDirty: false
+                pattern: /.+/
             },
             {
                 name: 'Some Field 1',
                 value: '',
-                pattern: /.+/,
-                isDirty: false
+                pattern: /.+/
             },
             {
                 name: 'Some Field 2',
                 value: '',
-                pattern: /.+/,
-                isDirty: false
+                pattern: /.+/
             }
         ],
         showResult: false,
-        validation: []
+        control: []
     },
     beforeMount() {
         for (let field of this.info) {
-            this.validation.push({
-                isCorrect: false
+            this.control.push({
+                isCorrect: false,
+                isDirty: false
             });
         }
     },
     methods: {
         onInput(index, value) {
             let field = this.info[index];
-            let fieldValidation = this.validation[index];
+            let fieldControl = this.control[index];
 
             field.value = value;
-            fieldValidation.isCorrect = field.pattern.test(value);
-            field.isDirty = true;
+            fieldControl.isCorrect = field.pattern.test(value);
+            fieldControl.isDirty = true;
         }
     },
     computed: {
         countOfCorrectFields() {
             let count = 0;
-            for (let fieldValidation of this.validation) {
+            for (let fieldValidation of this.control) {
                 if (fieldValidation.isCorrect) {
                     count++;
                 }
