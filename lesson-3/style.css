@@ -1,0 +1,38 @@
+.form-group, button {
+    margin: 5px;
+    padding-bottom: 5px;
+}
+
+.content {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+label {
+    font-weight: bold;
+    text-align: left;
+    margin-right: 5px;
+}
+
+.wrapper {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fa-exclamation-circle {
+    color: red;
+}
+
+.fa-check-circle {
+    color: green;
+}
+
+.progress {
+     min-height: 30px;
+}
+
+.progress-bar {
+    transition: width 1s ease;
+}
