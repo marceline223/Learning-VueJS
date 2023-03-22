@@ -20,7 +20,7 @@
                            :value="field.value"
                            :pattern="field.pattern"
                            :key="index"
-                           @changedata="onChangeData(index, $event)"
+                           @input="onInput(index, $event)"
                 >
                 </app-input>
             <button class="btn btn-primary" @click="showResult = true" :disabled="countOfCorrectFields != info.length">

@@ -23,7 +23,7 @@ Vue.component('app-input', {
     methods: {
         onInput(e) {
             this.isDirty = true;
-            this.$emit('changedata', {
+            this.$emit('input', {
                 value: e.target.value,
                 isValid: this.pattern.test(e.target.value)
             });
@@ -72,7 +72,7 @@ new Vue({
         }
     },
     methods: {
-        onChangeData(index, data) {
+        onInput(index, data) {
             this.info[index].value = data.value;
             this.control[index].isCorrect = data.isValid;
         }
