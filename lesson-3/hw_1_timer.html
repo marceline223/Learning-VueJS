@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>HomeWork 3-1</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-$END$
+<div class="sample">
+    <div v-timer:1000.5="onTimer">1</div>
+    <div v-timer:1000.5.run="onTimer">2</div>
+    <div v-timer:1000="onTimer">3</div>
+</div>
+
+<!------VUE.JS------->
+<script src="../../src/vue.js"></script>
+<script src="hw_1_timer.js"></script>
+
 </body>
 </html>

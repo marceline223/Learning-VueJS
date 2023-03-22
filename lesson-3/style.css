@@ -1,3 +1,8 @@
+.wrapper {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
 .form-group, button {
     margin: 5px;
     padding-bottom: 5px;
@@ -15,12 +20,6 @@ label {
     margin-right: 5px;
 }
 
-.wrapper {
-    width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .fa-exclamation-circle {
     color: red;
 }
@@ -30,7 +29,7 @@ label {
 }
 
 .progress {
-     min-height: 30px;
+    min-height: 30px;
 }
 
 .progress-bar {

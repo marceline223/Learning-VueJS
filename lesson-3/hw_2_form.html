@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeWork 2-1</title>
+    <link rel="stylesheet" href="../../src/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../src/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="sample">
+        <form @submit.prevent="showResult" v-if="!showResult">
+            <div class="progress">
+                <div class="progress-bar" v-bind:style="progressBarStyle"></div>
+            </div>
+                <app-input v-for="(field, index) in info"
+                           :name="field.name"
+                           :value="field.value"
+                           :pattern="field.pattern"
+                           :key="index"
+                           @changedata="onChangeData(index, $event)"
+                >
+                </app-input>
+            <button class="btn btn-primary" @click="showResult = true" :disabled="countOfCorrectFields != info.length">
+                Send Data
+            </button>
+        </form>
+        <div v-if="showResult">
+            <table class="table table-bordered">
+                <tr v-for="field in info">
+                    <td>{{field.name}}</td>
+                    <td>{{field.value}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!------VUE.JS------->
+<script src="../../src/vue.js"></script>
+<script src="hw_2_form.js"></script>
+</body>
+</html>
